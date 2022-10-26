@@ -4,18 +4,18 @@ function classStorage() {
     class Storage {
         constructor(capacity) {
             this.capacity = capacity;
-            this.products = [];
+            this.storage = [];
             this.totalCost = 0
         }
 
         addProduct(product) {
-            this.products.push(product);
-            return this.capacity -= product.quantity,
-                this.totalCost += product.price * product.quantity;
+            this.storage.push(product);
+            this.capacity -= product.quantity;
+            this.totalCost += product.price * product.quantity;
         }
         getProducts() {
             let productAsJSON = [];
-            this.products.forEach(product => {
+            this.storage.forEach(product => {
                 productAsJSON.push(JSON.stringify(product))
             })
             return productAsJSON.join(`\n`);
