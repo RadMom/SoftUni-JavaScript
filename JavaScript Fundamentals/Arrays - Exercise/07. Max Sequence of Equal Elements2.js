@@ -4,6 +4,8 @@ function maxSequenceOfEqualElements2(arr) {
     let maxSequence = [];
 
     for (let i = 0; i < arrLength; i++) {
+
+        
         let currentSequence = [];
         for (let j = i; j < arrLength; j++) {
             if (arr[i] === arr[j]) {
